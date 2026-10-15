@@ -18,6 +18,10 @@ Website statis LAVÉRA dengan HTML, CSS, dan JavaScript. Tidak menggunakan Strea
 4. Pilih branch `main` dan folder `/(root)`, lalu klik **Save**.
 5. Tunggu proses publikasi, kemudian buka alamat Pages yang ditampilkan pada halaman tersebut.
 
+## Area pemilik
+
+Website menampilkan bagian informasi Area Pemilik, tetapi belum menyediakan login/dashboard sungguhan karena GitHub Pages hanya menjalankan file statis.
+
 ## Batasan penting
 
 - Website ini adalah versi statis/demo dari LAVÉRA; bukan konversi backend Python/SQLite secara penuh.
@@ -25,3 +29,13 @@ Website statis LAVÉRA dengan HTML, CSS, dan JavaScript. Tidak menggunakan Strea
 - Login pelanggan/pemilik, pengelolaan layanan oleh admin, serta status pesanan yang tersinkron tidak dapat dibuat aman hanya dengan GitHub Pages. Untuk fitur tersebut dibutuhkan backend/API dan database terpisah.
 - Jangan masukkan password, data pelanggan asli, atau rahasia ke file website publik.
 - Harga layanan mengikuti daftar awal aplikasi: Cuci Komplit Rp8.000/kg, Cuci Kering Rp5.000/kg, Setrika Rp4.000/kg, Express Rp15.000/kg, Bed Cover & Selimut Rp20.000/pcs. Sesuaikan sebelum digunakan secara nyata.
+
+
+## Akun pelanggan demo
+
+Website menyediakan form daftar/login pelanggan berlapis. Data akun demo disimpan di localStorage browser, dengan password di-hash di sisi browser. Ini bukan autentikasi server: data hanya ada di browser/perangkat tersebut, dapat hilang jika data browser dihapus, dan tidak aman untuk data sensitif. Untuk akun lintas perangkat dan login produksi diperlukan backend serta database.
+
+
+## Form pemesanan
+
+Halaman pemesanan menggunakan sidebar pelanggan, pilihan layanan, detail alamat/berat/tanggal penjemputan, dan ringkasan estimasi biaya. Data tetap demo browser-side; tidak ada sinkronisasi server.

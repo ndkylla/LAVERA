@@ -34,7 +34,49 @@
     .receipt-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:14px auto 0}
     @media print{body *{visibility:hidden!important}.receipt-wrap,.receipt-wrap *{visibility:visible!important}.receipt-wrap{display:block!important;position:absolute;left:0;top:0;width:100%;margin:0}.receipt{box-shadow:none;border:1px dashed #777;max-width:100%;}.receipt-actions{display:none!important}}
 
-    @media(max-width:800px){.links{display:none}.menu{display:inline-flex}.hero{padding:52px 0}.hero-grid,.order-layout{grid-template-columns:1fr}.leaf-art{min-height:280px;max-width:500px;width:100%;margin:auto}.cards,.service-grid,.values{grid-template-columns:1fr 1fr}.hero-grid{gap:32px}section{padding:58px 0}}
+
+    .auth-section{background:#f0f4ed}
+    .auth-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:28px;align-items:start}
+    .auth-intro{padding:28px 0}
+    .auth-intro h2{font:clamp(2rem,4vw,3rem)/1.12 Georgia,serif;color:var(--forest)}
+    .auth-tabs{display:flex;gap:24px;border-bottom:2px solid #e7e9e6;margin:18px 0 22px}
+    .auth-tab{border:0;background:transparent;padding:0 0 12px;color:#47564d;font-weight:650;border-bottom:3px solid transparent;margin-bottom:-2px}
+    .auth-tab.active{color:var(--green);border-bottom-color:var(--green)}
+    .auth-form{display:none}.auth-form.active{display:block}
+    .auth-message{display:none;border-radius:12px;padding:12px 14px;margin-top:14px;font-size:.9rem}
+    .auth-message.success{display:block;background:#e8f4e8;color:#214b32;border:1px solid #c9e0c8}
+    .auth-message.error{display:block;background:#fff0ee;color:#8b2f2b;border:1px solid #f1c7c2}
+    .auth-state{display:none}
+    .account-box{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff;margin-top:16px}
+    .account-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+    .account-row:last-child{border-bottom:0}
+
+
+    .customer-app{display:grid;grid-template-columns:220px minmax(0,1fr);gap:26px;align-items:start}
+    .app-sidebar{position:sticky;top:95px;background:#eef2ee;border:1px solid var(--line);border-radius:18px;padding:20px}
+    .sidebar-brand{font:700 1.35rem Georgia,serif;letter-spacing:.1em;color:var(--forest)}
+    .sidebar-sub{font-size:.68rem;letter-spacing:.12em;color:var(--muted)}
+    .sidebar-user{margin:20px 0;padding:14px 0;border-top:1px solid #d7e1d6;border-bottom:1px solid #d7e1d6;font-size:.88rem}
+    .sidebar-nav{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+    .sidebar-nav a{padding:10px 12px;border-radius:10px;color:#40564a;font-size:.9rem}
+    .sidebar-nav a:hover,.sidebar-nav a.active{background:#dce9dc;color:var(--forest);font-weight:700}
+    .order-app-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,.75fr);gap:22px;align-items:start}
+    .order-stack{display:flex;flex-direction:column;gap:18px}
+    .order-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+    .order-card h3{font:1.35rem Georgia,serif;color:var(--forest);margin-bottom:16px}
+    .service-choice{display:flex;flex-wrap:wrap;gap:10px}
+    .service-choice label{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;flex:1;min-width:130px}
+    .service-choice label:has(input:checked){border-color:var(--green);background:#f0f6ef}
+    .service-choice input{accent-color:var(--green)}
+    .order-summary{position:sticky;top:95px}
+    .summary-price{border:1px solid #cbd9ca;border-radius:14px;padding:18px;margin:18px 0;background:#fbfdf9}
+    .summary-price strong{display:block;font:2rem Georgia,serif;color:var(--forest);margin-top:5px}
+    .order-tabs{display:flex;gap:18px;border-bottom:1px solid var(--line);margin:0 0 20px;padding-bottom:12px}
+    .order-tabs a{font-size:.9rem;color:var(--muted)}
+    .order-tabs a:first-child{color:var(--green);font-weight:700;border-bottom:2px solid var(--green);padding-bottom:12px;margin-bottom:-14px}
+    @media(max-width:900px){.customer-app{grid-template-columns:1fr}.app-sidebar{position:static}.sidebar-nav{flex-direction:row;flex-wrap:wrap}.order-app-layout{grid-template-columns:1fr}.order-summary{position:static}}
+
+    @media(max-width:800px){.auth-layout{grid-template-columns:1fr}.auth-intro{padding:0}.links{display:none}.menu{display:inline-flex}.hero{padding:52px 0}.hero-grid,.order-layout{grid-template-columns:1fr}.leaf-art{min-height:280px;max-width:500px;width:100%;margin:auto}.cards,.service-grid,.values{grid-template-columns:1fr 1fr}.hero-grid{gap:32px}section{padding:58px 0}}
     @media(max-width:520px){.wrap{width:min(100% - 28px,1120px)}.nav{height:68px}.brand{font-size:1.5rem}.hero h1{font-size:3.25rem}.cards,.service-grid,.values{grid-template-columns:1fr}.panel{padding:20px}.footer-row{align-items:flex-start;flex-direction:column}.track-row{flex-direction:column}}
   </style>
 </head>
@@ -42,7 +84,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#home" aria-label="LAVÉRA beranda">LAVÉRA<small>CARE IN EVERY THREAD</small></a>
-    <nav class="links" aria-label="Navigasi utama"><a href="#tentang">Tentang</a><a href="#layanan">Layanan</a><a href="#pesan">Pesan Laundry</a><a href="#lacak">Lacak Pesanan</a></nav>
+    <nav class="links" aria-label="Navigasi utama"><a href="#tentang">Tentang</a><a href="#akun">Akun Pelanggan</a><a href="#layanan">Layanan</a><a href="#pesan">Pesan Laundry</a><a href="#lacak">Lacak Pesanan</a><a href="#pemilik">Area Pemilik</a></nav>
     <a class="btn btn-primary" href="#pesan">Mulai Pesan ↗</a>
   </div>
 </header>
@@ -68,17 +110,61 @@
       <p class="small" style="text-align:center;margin:20px 0 0">Harga dan estimasi dapat berubah sesuai kebijakan laundry. Konfirmasikan sebelum transaksi sebenarnya.</p>
     </div>
   </section>
+  <section id="akun" class="auth-section">
+    <div class="wrap auth-layout">
+      <div class="auth-intro">
+        <div class="eyebrow">Customer account</div>
+        <h2>Selamat datang di LAVÉRA.</h2>
+        <p style="color:var(--muted)">Buat akun pelanggan, lalu masuk kembali menggunakan username dan password yang kamu buat.</p>
+        <div class="card" style="margin-top:22px"><div class="symbol">🔐</div><h3>Akun pelanggan</h3><p>Di versi GitHub Pages ini, akun demo tersimpan hanya di browser/perangkat yang sama. Ini belum merupakan sistem akun server yang aman atau sinkron antarperangkat.</p></div>
+      </div>
+      <div class="panel">
+        <div id="authForms">
+          <div class="auth-tabs" role="tablist" aria-label="Akun pelanggan">
+            <button class="auth-tab active" type="button" id="loginTab" role="tab" aria-selected="true">Login</button>
+            <button class="auth-tab" type="button" id="registerTab" role="tab" aria-selected="false">Daftar pelanggan</button>
+          </div>
+          <form class="auth-form active" id="loginForm">
+            <div class="field"><label for="loginUsername">Username</label><input id="loginUsername" name="username" autocomplete="username" maxlength="30" required></div>
+            <div class="field"><label for="loginPassword">Password</label><input id="loginPassword" name="password" type="password" autocomplete="current-password" required></div>
+            <button class="btn btn-primary" type="submit">Masuk</button>
+            <div id="loginMessage" class="auth-message" role="status"></div>
+          </form>
+          <form class="auth-form" id="registerForm">
+            <div class="field"><label for="registerName">Nama lengkap</label><input id="registerName" name="name" autocomplete="name" maxlength="80" required placeholder="Nama kamu"></div>
+            <div class="field"><label for="registerUsername">Buat username</label><input id="registerUsername" name="username" autocomplete="username" minlength="3" maxlength="30" pattern="[A-Za-z0-9_.-]+" required placeholder="Contoh: nadia123"><span class="small">3–30 karakter: huruf, angka, titik, garis bawah, atau strip.</span></div>
+            <div class="field"><label for="registerContact">Kontak (opsional)</label><input id="registerContact" name="contact" autocomplete="email" placeholder="Nomor WhatsApp atau email"></div>
+            <div class="field"><label for="registerPassword">Buat password</label><input id="registerPassword" name="password" type="password" autocomplete="new-password" minlength="8" required placeholder="Minimal 8 karakter"></div>
+            <div class="field"><label for="registerPasswordConfirm">Ulangi password</label><input id="registerPasswordConfirm" name="passwordConfirm" type="password" autocomplete="new-password" minlength="8" required placeholder="Ulangi password"></div>
+            <button class="btn btn-primary" type="submit">Buat akun</button>
+            <div id="registerMessage" class="auth-message" role="status"></div>
+          </form>
+        </div>
+        <div class="auth-state" id="accountDashboard">
+          <div class="eyebrow">Akun pelanggan</div><h3 id="welcomeCustomer">Halo!</h3>
+          <p style="color:var(--muted)">Kamu sudah masuk ke akun demo LAVÉRA.</p>
+          <div class="account-box">
+            <div class="account-row"><span>Nama</span><strong id="accountName">—</strong></div>
+            <div class="account-row"><span>Username</span><strong id="accountUsername">—</strong></div>
+            <div class="account-row"><span>Kontak</span><strong id="accountContact">—</strong></div>
+          </div>
+          <p style="margin-top:18px"><a href="#pesan" class="btn btn-primary">Pesan laundry ↗</a> <button type="button" class="btn btn-light" id="logoutButton">Keluar</button></p>
+          <div class="notice">Akun demo ini hanya berlaku di browser/perangkat ini. Jangan gunakan password asli atau sensitif.</div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section id="pesan">
-    <div class="wrap"><div class="section-head"><div class="eyebrow">Easy order</div><h2>Mulai pesananmu.</h2><p>Isi formulir di bawah untuk membuat contoh pesanan dan melihat estimasi biaya.</p></div>
-      <div class="order-layout">
-        <form class="panel" id="orderForm">
-          <h3>Detail pesanan</h3>
+    <div class="wrap"><div class="customer-app"><aside class="app-sidebar"><div class="sidebar-brand">LAVÉRA</div><div class="sidebar-sub">CARE IN EVERY THREAD</div><div class="sidebar-user">Pelanggan<br><strong id="sidebarCustomerName">Akun pelanggan</strong></div><nav class="sidebar-nav"><a href="#pesan" class="active">Buat pesanan</a><a href="#lacak">Pesanan saya</a><a href="#akun">Akun saya</a><a href="#home">Beranda</a></nav></aside><div class="customer-app-main"><div class="section-head"><div class="eyebrow">Easy order</div><h2>Mulai pesananmu.</h2><p>Isi formulir di bawah untuk membuat contoh pesanan dan melihat estimasi biaya.</p></div>
+      <div class="order-app-layout">
+        <div class="order-stack"><div class="order-card"><h3>01 · Pilih layanan</h3><div class="service-choice" id="serviceChoice"></div><div class="small" id="servicePriceHint" style="margin-top:12px"></div></div><form class="order-card" id="orderForm"><h3>02 · Detail pesanan</h3>
           <div class="field"><label for="customerName">Nama kamu</label><input id="customerName" name="customerName" autocomplete="name" required placeholder="Contoh: Nadia"></div>
           <div class="field"><label for="customerContact">Kontak (opsional)</label><input id="customerContact" name="customerContact" placeholder="Nomor WhatsApp atau email"></div>
-          <div class="field"><label for="serviceSelect">Pilih layanan</label><select id="serviceSelect" name="serviceSelect" required></select></div>
+          <div class="field"><label for="pickupAddress">Alamat penjemputan</label><textarea id="pickupAddress" name="pickupAddress" required placeholder="Nama jalan, nomor rumah, atau kos"></textarea></div>
+          <div class="field"><label for="pickupDate">Tanggal penjemputan</label><input id="pickupDate" name="pickupDate" type="date" required></div>
+          <div class="field" style="display:none"><label for="serviceSelect">Pilih layanan</label><select id="serviceSelect" name="serviceSelect" required></select></div>
           <div class="field"><label for="quantity" id="quantityLabel">Berat (kg)</label><input id="quantity" name="quantity" type="number" min="1" max="100" step="0.5" value="2" required></div>
           <div class="field"><label for="notes">Catatan (opsional)</label><textarea id="notes" name="notes" placeholder="Contoh: pakaian warna putih dipisah"></textarea></div>
-          <div class="estimate"><span>Estimasi total</span><strong id="totalPrice">Rp 16.000</strong><span id="estimateText">Estimasi pengerjaan sekitar 2 hari.</span></div>
           <button class="btn btn-primary" type="submit" style="width:100%">Buat contoh pesanan ↗</button>
           <div class="result" id="orderResult" role="status" aria-live="polite"></div>
           <div class="receipt-wrap" id="receiptWrap" aria-live="polite">
@@ -102,16 +188,33 @@
             <div class="receipt-actions"><button class="btn btn-light" type="button" id="printReceipt">Cetak / Simpan PDF</button><button class="btn btn-light" type="button" id="hideReceipt">Tutup struk</button></div>
           </div>
           <div class="notice">Demo GitHub Pages: pesanan hanya tersimpan di browser/perangkat ini. Ini belum mengirim pesanan ke laundry atau menyimpan data di server.</div>
-        </form>
-        <aside class="panel" id="lacak">
+        </form></div>
+        <aside class="order-card order-summary"><h3>Ringkasan pesanan</h3><p id="summaryService" class="small">Layanan: Cuci Komplit</p><p id="summaryQuantity" class="small">Berat: 2 kg</p><p class="small" id="summaryPickup">Penjemputan: belum dipilih</p><div class="summary-price"><span class="small">Total estimasi</span><strong id="totalPrice">Rp 16.000</strong><span class="small" id="estimateText">Estimasi pengerjaan sekitar 2 hari.</span></div><button class="btn btn-primary" type="submit" form="orderForm" style="width:100%">Buat pesanan</button><div class="notice">Total akhir dapat dikonfirmasi setelah penimbangan.</div>
+        </aside>
+        <aside class="order-card" id="lacak">
           <h3>Lacak pesanan</h3><p class="small">Masukkan kode pesanan yang dibuat pada perangkat ini.</p>
           <form id="trackForm"><div class="field"><label for="orderCode">Kode pesanan</label><div class="track-row"><input id="orderCode" required placeholder="Contoh: LAV-ABC123"><button class="btn btn-light" type="submit">Lacak</button></div></div></form>
           <div id="trackResult"></div>
           <hr style="border:0;border-top:1px solid var(--line);margin:24px 0">
           <h3 style="font-size:1.25rem">Riwayat di perangkat ini</h3><div id="orderHistory"><p class="small">Belum ada pesanan tersimpan di browser ini.</p></div>
         </aside>
-      </div>
+      </div></div></div>
     </div>
+  </section>
+  <section id="pemilik" style="background:#fbfaf5">
+    <div class="wrap"><div class="order-layout">
+      <div><div class="eyebrow">Untuk mitra LAVÉRA</div>
+        <h2 style="font:clamp(2rem,4vw,3rem)/1.15 Georgia,serif;color:var(--forest);margin:10px 0 12px">Kelola laundry dengan lebih praktis.</h2>
+        <p style="color:var(--muted);max-width:560px">Area pemilik disiapkan sebagai titik masuk untuk pengelolaan operasional. Pada versi GitHub Pages ini, bagian ini masih berupa informasi karena dashboard pemilik memerlukan backend.</p>
+        <a class="btn btn-primary" href="#ownerInfo">Masuk area pemilik ↗</a>
+      </div>
+      <div class="panel" id="ownerInfo"><div class="symbol">🔐</div><h3>Portal Pemilik LAVÉRA</h3>
+        <p>Dashboard pemilik sungguhan membutuhkan login aman, database bersama, dan data pesanan yang tersinkron. GitHub Pages hanya menjalankan website statis, jadi halaman ini belum bisa mengautentikasi pemilik atau menampilkan pesanan pelanggan.</p>
+        <div class="notice" style="margin-bottom:16px">Mode demo — belum terhubung ke akun pemilik atau database.</div>
+        <button class="btn btn-light" type="button" id="ownerInfoButton">Lihat info akses pemilik</button>
+        <div class="result" id="ownerInfoResult" role="status" style="display:none">Untuk dashboard pemilik yang benar-benar bisa login dan mengelola pesanan, LAVÉRA perlu backend/API dan database. Jangan menaruh password pemilik di HTML atau JavaScript publik.</div>
+      </div>
+    </div></div>
   </section>
   <section class="philosophy">
     <div class="wrap"><div class="section-head"><div class="eyebrow" style="color:#b5d4b7">Our promise</div><h2>Merawat pakaian. Meringankan harimu.</h2><p>Hijau melambangkan kesegaran dan pertumbuhan, ivory memberi kesan bersih dan tenang, sementara hijau tua mewakili kepercayaan.</p></div>
@@ -119,7 +222,7 @@
     </div>
   </section>
 </main>
-<footer><div class="wrap footer-row"><div><div class="footer-brand">LAVÉRA</div><p>Care in every thread.</p></div><p>© <span id="year"></span> LAVÉRA. Dibuat dengan perhatian 💚</p></div></footer>
+<footer><div class="wrap footer-row"><div><div class="footer-brand">LAVÉRA</div><p>Care in every thread.</p></div><p>© <span id="year"></span> LAVÉRA.</p></div></footer>
 <script>
   const services = [
     {id:"komplit",name:"Cuci Komplit (Cuci + Setrika)",price:8000,unit:"kg",days:2,description:"Cuci bersih, pelembut pakaian, dan setrika rapi.",icon:"🧺"},
@@ -134,6 +237,8 @@
   function renderServices(){
     serviceCards.innerHTML = services.map(s=>`<article class="service"><div class="service-top"><h3>${s.icon} ${s.name}</h3><span class="pill">~${s.days} hari</span></div><div class="price">${rupiah(s.price)}<span style="font: .82rem system-ui;color:#65756b"> / ${s.unit}</span></div><p>${s.description}</p><a class="btn btn-light" href="#pesan" data-service="${s.id}">Pilih layanan</a></article>`).join("");
     serviceSelect.innerHTML = services.map(s=>`<option value="${s.id}">${s.name} — ${rupiah(s.price)}/${s.unit}</option>`).join("");
+    const choice=$("serviceChoice");
+    if(choice){choice.innerHTML=services.map((s,i)=>`<label><input type="radio" name="serviceChoiceRadio" value="${s.id}" ${i===1?"checked":""}><span><strong>${s.name}</strong><br><small>${rupiah(s.price)}/${s.unit}</small></span></label>`).join("");choice.querySelectorAll("input").forEach(r=>r.addEventListener("change",()=>{serviceSelect.value=r.value;updateEstimate()}));}
     serviceCards.querySelectorAll("[data-service]").forEach(btn=>btn.addEventListener("click",()=>{serviceSelect.value=btn.dataset.service;updateEstimate();}));
   }
   function selectedService(){return services.find(s=>s.id===serviceSelect.value)||services[0]}
@@ -142,6 +247,10 @@
     quantity.step=s.unit==="pcs"?"1":"0.5"; if(s.unit==="pcs" && !Number.isInteger(Number(quantity.value))) quantity.value=Math.ceil(Number(quantity.value)||1);
     const qty=Math.max(1,Number(quantity.value)||1); $("totalPrice").textContent=rupiah(qty*s.price);
     $("estimateText").textContent=s.id==="express"?"Estimasi pengerjaan sekitar 6 jam.":`Estimasi pengerjaan sekitar ${s.days} hari.`;
+    if($("summaryService"))$("summaryService").textContent=`Layanan: ${s.name}`;
+    if($("summaryQuantity"))$("summaryQuantity").textContent=`${s.unit==="pcs"?"Jumlah":"Berat"}: ${qty} ${s.unit}`;
+    if($("servicePriceHint"))$("servicePriceHint").textContent=`Harga: ${rupiah(s.price)} / ${s.unit}`;
+    if($("summaryPickup"))$("summaryPickup").textContent=`Penjemputan: ${$("pickupDate")?.value||"belum dipilih"}`;
   }
   function getOrders(){try{return JSON.parse(localStorage.getItem("lavera_demo_orders")||"[]")}catch(e){return []}}
   function saveOrders(orders){try{localStorage.setItem("lavera_demo_orders",JSON.stringify(orders))}catch(e){}}
@@ -164,7 +273,66 @@
     e.preventDefault();const code=$("orderCode").value.trim().toUpperCase();const order=getOrders().find(o=>o.code.toUpperCase()===code);
     $("trackResult").innerHTML=order?`<div class="result" style="display:block"><strong>${safe(order.code)}</strong><br>${safe(order.name)}<br>${safe(order.serviceName)} · ${safe(order.quantity)} ${safe(order.unit)}<br>Total: <strong>${rupiah(order.total)}</strong><br>Status: ${safe(order.status)}<br><span class="small">Dibuat: ${safe(order.date)}</span></div>`:'<div class="notice">Kode tidak ditemukan di browser ini. Pastikan kode benar dan gunakan perangkat/browser yang sama.</div>';
   });
-  serviceSelect.addEventListener("change",updateEstimate);quantity.addEventListener("input",updateEstimate);
+
+  const accountStoreKey="lavera_demo_accounts_v1";
+  const sessionStoreKey="lavera_demo_session_v1";
+  function getAccounts(){try{return JSON.parse(localStorage.getItem(accountStoreKey)||"[]")}catch(e){return []}}
+  function saveAccounts(accounts){localStorage.setItem(accountStoreKey,JSON.stringify(accounts))}
+  function showAuthMessage(id,message,type){const el=$(id);el.className="auth-message "+type;el.textContent=message}
+  function switchAuthTab(tab){
+    const login=tab==="login";
+    $("loginTab").classList.toggle("active",login);$("registerTab").classList.toggle("active",!login);
+    $("loginTab").setAttribute("aria-selected",String(login));$("registerTab").setAttribute("aria-selected",String(!login));
+    $("loginForm").classList.toggle("active",login);$("registerForm").classList.toggle("active",!login);
+  }
+  function showAccount(account){
+    $("authForms").style.display="none";$("accountDashboard").style.display="block";
+    $("welcomeCustomer").textContent=`Halo, ${account.name}!`;
+    $("accountName").textContent=account.name;$("accountUsername").textContent=account.username;$("accountContact").textContent=account.contact||"—";
+    $("customerName").value=account.name;$("customerContact").value=account.contact||"";
+  }
+  function showLoggedOut(){
+    $("authForms").style.display="block";$("accountDashboard").style.display="none";switchAuthTab("login");
+  }
+  $("loginTab").addEventListener("click",()=>switchAuthTab("login"));
+  $("registerTab").addEventListener("click",()=>switchAuthTab("register"));
+  $("registerForm").addEventListener("submit",async e=>{
+    e.preventDefault();
+    const name=$("registerName").value.trim(),username=$("registerUsername").value.trim(),contact=$("registerContact").value.trim(),password=$("registerPassword").value,passwordConfirm=$("registerPasswordConfirm").value;
+    if(password!==passwordConfirm){showAuthMessage("registerMessage","Password dan konfirmasi password belum sama.","error");return}
+    const accounts=getAccounts();
+    if(accounts.some(a=>a.username.toLowerCase()===username.toLowerCase())){showAuthMessage("registerMessage","Username sudah dipakai. Coba username lain.","error");return}
+    try{
+      const salt=crypto.getRandomValues(new Uint8Array(16));
+      const key=await crypto.subtle.importKey("raw",new TextEncoder().encode(password),"PBKDF2",false,["deriveBits"]);
+      const bits=await crypto.subtle.deriveBits({name:"PBKDF2",salt,iterations:100000,hash:"SHA-256"},key,256);
+      const toHex=b=>Array.from(new Uint8Array(b)).map(v=>v.toString(16).padStart(2,"0")).join("");
+      const account={name,username,contact,salt:toHex(salt),passwordHash:toHex(bits),createdAt:new Date().toISOString()};
+      accounts.push(account);saveAccounts(accounts);localStorage.setItem(sessionStoreKey,username);
+      showAuthMessage("registerMessage","Akun berhasil dibuat! Kamu sudah masuk.","success");showAccount(account);
+    }catch(err){showAuthMessage("registerMessage","Browser tidak mendukung pembuatan akun demo ini. Coba browser terbaru.","error")}
+  });
+  $("loginForm").addEventListener("submit",async e=>{
+    e.preventDefault();const username=$("loginUsername").value.trim(),password=$("loginPassword").value;
+    const account=getAccounts().find(a=>a.username.toLowerCase()===username.toLowerCase());
+    if(!account){showAuthMessage("loginMessage","Username belum terdaftar. Silakan daftar terlebih dahulu.","error");return}
+    try{
+      const fromHex=s=>new Uint8Array((s.match(/.{1,2}/g)||[]).map(v=>parseInt(v,16)));
+      const salt=fromHex(account.salt);
+      const key=await crypto.subtle.importKey("raw",new TextEncoder().encode(password),"PBKDF2",false,["deriveBits"]);
+      const bits=await crypto.subtle.deriveBits({name:"PBKDF2",salt,iterations:100000,hash:"SHA-256"},key,256);
+      const hash=Array.from(new Uint8Array(bits)).map(v=>v.toString(16).padStart(2,"0")).join("");
+      if(hash!==account.passwordHash){showAuthMessage("loginMessage","Password salah. Coba periksa kembali.","error");return}
+      localStorage.setItem(sessionStoreKey,account.username);showAccount(account);
+    }catch(err){showAuthMessage("loginMessage","Login demo gagal di browser ini. Coba browser terbaru.","error")}
+  });
+  $("logoutButton").addEventListener("click",()=>{localStorage.removeItem(sessionStoreKey);$("loginForm").reset();showLoggedOut();});
+  try{const username=localStorage.getItem(sessionStoreKey);if(username){const account=getAccounts().find(a=>a.username===username);if(account)showAccount(account)}}catch(e){}
+
+    serviceSelect.addEventListener("change",updateEstimate);quantity.addEventListener("input",updateEstimate);
+  if($("pickupDate")){$("pickupDate").min=new Date().toISOString().slice(0,10);$("pickupDate").addEventListener("change",updateEstimate);}
+  if($("sidebarCustomerName")){try{const u=localStorage.getItem("lavera_demo_session_v1");const a=JSON.parse(localStorage.getItem("lavera_demo_accounts_v1")||"[]").find(x=>x.username===u);if(a)$("sidebarCustomerName").textContent=a.name;}catch(e){}}
+  $("ownerInfoButton").addEventListener("click",()=>{$("ownerInfoResult").style.display="block"});
   $("printReceipt").addEventListener("click",()=>window.print());
   $("hideReceipt").addEventListener("click",()=>{$("receiptWrap").style.display="none"});
   $("year").textContent=new Date().getFullYear();renderServices();updateEstimate();renderHistory();
