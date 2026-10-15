@@ -56,7 +56,7 @@ async function loadProfile(){
 async function loadServices(){
  const {data,error}=await db.from("services").select("*").eq("active",true).order("sort_order");
  if(error)throw error;services=data||[];
- $("publicServices").innerHTML=services.map(s=>`<article class="card"><div class="symbol">🧺</div><h3>${escapeHtml(s.name)}</h3><h2>${fmt(s.price)}<span style="font: .85rem system-ui;color:var(--muted)">/${escapeHtml(s.unit)}</span></h2><p>${escapeHtml(s.description||"Perawatan pakaian dengan perhatian.")}</p><p class="muted" style="font-size:.85rem;margin-top:10px">Estimasi ${escapeHtml(s.eta_text||"sesuai antrean")}</p></article>`).join("")||'<div class="card">Belum ada layanan aktif.</div>';
+ $("publicServices").innerHTML=services.map(s=>`<article class="card"><div class="symbol">✨</div><h3>${escapeHtml(s.name)}</h3><h2>${fmt(s.price)}<span style="font: .85rem system-ui;color:var(--muted)">/${escapeHtml(s.unit)}</span></h2><p>${escapeHtml(s.description||"Perawatan pakaian dengan perhatian.")}</p><p class="muted" style="font-size:.85rem;margin-top:10px">Estimasi ${escapeHtml(s.eta_text||"sesuai antrean")}</p></article>`).join("")||'<div class="card">Belum ada layanan aktif.</div>';
  $("serviceChoices").innerHTML=services.map((s,i)=>`<label class="service-option"><input type="radio" name="service" value="${s.id}" ${i===0?"checked":""}><span><strong>${escapeHtml(s.name)}</strong><br><small>${fmt(s.price)}/${escapeHtml(s.unit)}</small></span></label>`).join("");
  chosenService=services[0]||null;updateSummary();
 }
