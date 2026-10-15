@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f32">
+  <meta name="description" content="LAVÉRA — Laundry care, made lighter. Layanan laundry yang bersih, rapi, dan praktis.">
+  <title>LAVÉRA — Laundry Care</title>
+  <style>
+    :root{--forest:#173f32;--green:#287653;--sage:#e8f0e7;--ivory:#fbfaf5;--ink:#23352c;--muted:#65756b;--line:#d8e3d7;--white:#fff;--gold:#c8a96a}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--ivory);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none} button,input,select,textarea{font:inherit} button{cursor:pointer}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(251,250,245,.94);backdrop-filter:blur(12px);border-bottom:1px solid #e5ebe2}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-family:Georgia,serif;font-size:1.8rem;letter-spacing:.14em;font-weight:700;color:var(--forest)}.brand small{display:block;font: .62rem/1.2 ui-sans-serif,system-ui;letter-spacing:.22em;color:var(--muted);margin-top:-2px}
+    .links{display:flex;align-items:center;gap:26px;font-size:.93rem;color:#40564a}.links a:hover{color:var(--green)}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:12px 20px;font-weight:700;transition:.2s}.btn-primary{background:var(--forest);color:#fff}.btn-primary:hover{background:var(--green);transform:translateY(-1px)}.btn-light{background:#fff;color:var(--forest);border:1px solid var(--line)}.menu{display:none}
+    .hero{padding:78px 0 62px;background:radial-gradient(ellipse at 85% 20%,#e4eddf 0,transparent 38%),linear-gradient(135deg,#fbfaf5 40%,#edf3e9)}.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:center}.eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.76rem;font-weight:800;color:var(--green)}h1,h2,h3,p{margin-top:0}h1{font:clamp(3.2rem,7vw,5.8rem)/.98 Georgia,serif;letter-spacing:.02em;color:var(--forest);margin:18px 0 22px}h1 em{font-weight:400;color:var(--green)}.hero p{max-width:580px;font-size:1.1rem;color:#526459}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.hero-note{display:flex;gap:12px;align-items:center;margin-top:30px;color:var(--muted);font-size:.9rem}.leaf-art{min-height:380px;border-radius:48% 48% 28px 28px;background:linear-gradient(145deg,#dce9d9,#f6f2e5);position:relative;overflow:hidden;display:grid;place-items:center}.leaf-art:before,.leaf-art:after{content:"";position:absolute;border:1px solid rgba(40,118,83,.22);border-radius:100% 0 100% 0;transform:rotate(-35deg)}.leaf-art:before{width:240px;height:330px;background:linear-gradient(145deg,#6d9b7d,#2e694b);left:18%;top:13%;box-shadow:22px 24px 0 rgba(23,63,50,.08)}.leaf-art:after{width:150px;height:230px;background:linear-gradient(145deg,#a6c4a5,#5c8d6a);right:12%;bottom:8%;transform:rotate(35deg)}.art-label{position:relative;z-index:2;background:rgba(251,250,245,.9);padding:20px 24px;border-radius:18px;text-align:center;box-shadow:0 12px 35px #173f3212}.art-label strong{display:block;font:1.7rem Georgia,serif;color:var(--forest)}.art-label span{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+    section{padding:76px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 38px}.section-head h2{font:clamp(2rem,4vw,3rem)/1.15 Georgia,serif;color:var(--forest);margin:10px 0 12px}.section-head p{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:25px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 8px 24px #173f3206}.card .symbol{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:var(--sage);font-size:1.4rem;margin-bottom:16px}.card h3{color:var(--forest);margin-bottom:8px}.card p{color:var(--muted);font-size:.95rem;margin-bottom:0}.services{background:#f0f4ed}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{display:flex;flex-direction:column;padding:25px;background:white;border:1px solid var(--line);border-radius:20px}.service-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.service h3{font-size:1.12rem;color:var(--forest);margin:0}.pill{white-space:nowrap;background:var(--sage);color:var(--green);border-radius:99px;padding:5px 10px;font-size:.75rem;font-weight:700}.price{font:1.7rem Georgia,serif;color:var(--forest);margin:20px 0 4px}.service p{color:var(--muted);font-size:.92rem;flex:1}.small{font-size:.82rem;color:var(--muted)}
+    .order-layout{display:grid;grid-template-columns:1fr .8fr;gap:28px;align-items:start}.panel{background:white;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 12px 32px #173f3207}.panel h3{font:1.6rem Georgia,serif;color:var(--forest)}.field{display:flex;flex-direction:column;gap:7px;margin:15px 0}.field label{font-size:.9rem;font-weight:700;color:#344b3d}.field input,.field select,.field textarea{width:100%;border:1px solid #cbd9ca;background:#fff;color:var(--ink);border-radius:11px;padding:12px 13px;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px #28765318}.field textarea{min-height:90px;resize:vertical}.estimate{padding:18px;border-radius:15px;background:var(--sage);margin:18px 0}.estimate span{display:block;color:var(--muted);font-size:.85rem}.estimate strong{font:2rem Georgia,serif;color:var(--forest)}.notice{padding:14px 16px;border-radius:12px;background:#fff6df;color:#6a5321;font-size:.88rem;margin-top:14px}.result{display:none;margin-top:16px;padding:16px;border-radius:12px;background:#e8f4e8;border:1px solid #c9e0c8;color:#214b32}.result code{font-weight:800;font-size:1.05rem}.track-row{display:flex;gap:10px}.track-row input{min-width:0;flex:1}.order-item{padding:14px 0;border-bottom:1px solid var(--line)}.order-item:last-child{border-bottom:0}.status{display:inline-block;background:#fff1d4;color:#7a5b18;border-radius:99px;padding:3px 9px;font-size:.75rem;font-weight:800}
+    .philosophy{background:var(--forest);color:#edf5eb}.philosophy .section-head h2{color:#fff}.philosophy .section-head p{color:#c8d8cc}.values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.value{border-top:1px solid #527463;padding-top:20px}.value h3{color:#e0eddd}.value p{color:#c8d8cc;font-size:.93rem}
+    footer{background:#102f26;color:#dce8dc;padding:34px 0}.footer-row{display:flex;justify-content:space-between;gap:22px;align-items:center}.footer-brand{font:1.5rem Georgia,serif;letter-spacing:.14em}.footer-row p{margin:5px 0 0;color:#aebfb2;font-size:.85rem}
+
+    .receipt-wrap{margin-top:18px;display:none}
+    .receipt{background:#fff;border:1px dashed #a7b9a7;border-radius:4px;padding:22px 20px;color:#24382d;max-width:440px;margin:0 auto;font-family:"Courier New",monospace;box-shadow:0 8px 24px #173f320c}
+    .receipt-head{text-align:center;border-bottom:1px dashed #b9c9b8;padding-bottom:14px;margin-bottom:14px}
+    .receipt-logo{font:700 1.7rem Georgia,serif;letter-spacing:.16em;color:#173f32}
+    .receipt-sub{font: .7rem ui-sans-serif,system-ui;letter-spacing:.14em;color:#65756b;margin-top:2px}
+    .receipt-title{font-weight:800;letter-spacing:.12em;margin-top:12px}
+    .receipt-line{display:flex;justify-content:space-between;gap:14px;margin:7px 0;font-size:.86rem}
+    .receipt-line span:last-child{text-align:right;overflow-wrap:anywhere}
+    .receipt-divider{border-top:1px dashed #b9c9b8;margin:12px 0}
+    .receipt-total{font-size:1.05rem;font-weight:800}
+    .receipt-foot{text-align:center;border-top:1px dashed #b9c9b8;margin-top:15px;padding-top:13px;font-size:.78rem;color:#65756b}
+    .receipt-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:14px auto 0}
+    @media print{body *{visibility:hidden!important}.receipt-wrap,.receipt-wrap *{visibility:visible!important}.receipt-wrap{display:block!important;position:absolute;left:0;top:0;width:100%;margin:0}.receipt{box-shadow:none;border:1px dashed #777;max-width:100%;}.receipt-actions{display:none!important}}
+
+    @media(max-width:800px){.links{display:none}.menu{display:inline-flex}.hero{padding:52px 0}.hero-grid,.order-layout{grid-template-columns:1fr}.leaf-art{min-height:280px;max-width:500px;width:100%;margin:auto}.cards,.service-grid,.values{grid-template-columns:1fr 1fr}.hero-grid{gap:32px}section{padding:58px 0}}
+    @media(max-width:520px){.wrap{width:min(100% - 28px,1120px)}.nav{height:68px}.brand{font-size:1.5rem}.hero h1{font-size:3.25rem}.cards,.service-grid,.values{grid-template-columns:1fr}.panel{padding:20px}.footer-row{align-items:flex-start;flex-direction:column}.track-row{flex-direction:column}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="LAVÉRA beranda">LAVÉRA<small>CARE IN EVERY THREAD</small></a>
+    <nav class="links" aria-label="Navigasi utama"><a href="#tentang">Tentang</a><a href="#layanan">Layanan</a><a href="#pesan">Pesan Laundry</a><a href="#lacak">Lacak Pesanan</a></nav>
+    <a class="btn btn-primary" href="#pesan">Mulai Pesan ↗</a>
+  </div>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div><div class="eyebrow">Laundry care, made lighter</div><h1>Lebih segar.<br><em>Lebih ringan.</em></h1><p>Layanan laundry yang bersih, rapi, dan praktis agar kamu punya lebih banyak waktu untuk hal yang berarti.</p><div class="hero-actions"><a class="btn btn-primary" href="#pesan">Pesan layanan <span aria-hidden="true">&nbsp;↗</span></a><a class="btn btn-light" href="#layanan">Lihat layanan</a></div><div class="hero-note"><span aria-hidden="true">✳</span> Perawatan pakaian dengan perhatian di setiap helai.</div></div>
+      <div class="leaf-art" role="img" aria-label="Ilustrasi daun hijau yang melambangkan kesegaran"><div class="art-label"><strong>Fresh by nature</strong><span>Thoughtful laundry care</span></div></div>
+    </div>
+  </section>
+  <section id="tentang">
+    <div class="wrap"><div class="section-head"><div class="eyebrow">Filosofi LAVÉRA</div><h2>Bersih, tenang, terawat.</h2><p>Terinspirasi dari kesegaran, kelembutan, dan rasa nyaman setelah pakaian dirawat dengan baik. Kami ingin pengalaman laundry terasa lebih mudah dan jelas.</p></div>
+      <div class="cards">
+        <article class="card"><div class="symbol">🌿</div><h3>Fresh Care</h3><p>Pilihan layanan yang jelas dan harga transparan untuk perawatan pakaian sehari-hari.</p></article>
+        <article class="card"><div class="symbol">🧺</div><h3>Easy Order</h3><p>Isi detail pesanan dan dapatkan kode pesanan untuk membantu melacaknya kembali di perangkat ini.</p></article>
+        <article class="card"><div class="symbol">💚</div><h3>Thoughtful Service</h3><p>Informasi layanan dan estimasi pengerjaan disajikan supaya kamu tahu apa yang dipilih.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="services" id="layanan">
+    <div class="wrap"><div class="section-head"><div class="eyebrow">Pilihan perawatan</div><h2>Layanan untuk kebutuhanmu.</h2><p>Pilih layanan yang paling cocok. Harga berikut mengikuti daftar layanan awal aplikasi LAVÉRA.</p></div>
+      <div class="service-grid" id="serviceCards"></div>
+      <p class="small" style="text-align:center;margin:20px 0 0">Harga dan estimasi dapat berubah sesuai kebijakan laundry. Konfirmasikan sebelum transaksi sebenarnya.</p>
+    </div>
+  </section>
+  <section id="pesan">
+    <div class="wrap"><div class="section-head"><div class="eyebrow">Easy order</div><h2>Mulai pesananmu.</h2><p>Isi formulir di bawah untuk membuat contoh pesanan dan melihat estimasi biaya.</p></div>
+      <div class="order-layout">
+        <form class="panel" id="orderForm">
+          <h3>Detail pesanan</h3>
+          <div class="field"><label for="customerName">Nama kamu</label><input id="customerName" name="customerName" autocomplete="name" required placeholder="Contoh: Nadia"></div>
+          <div class="field"><label for="customerContact">Kontak (opsional)</label><input id="customerContact" name="customerContact" placeholder="Nomor WhatsApp atau email"></div>
+          <div class="field"><label for="serviceSelect">Pilih layanan</label><select id="serviceSelect" name="serviceSelect" required></select></div>
+          <div class="field"><label for="quantity" id="quantityLabel">Berat (kg)</label><input id="quantity" name="quantity" type="number" min="1" max="100" step="0.5" value="2" required></div>
+          <div class="field"><label for="notes">Catatan (opsional)</label><textarea id="notes" name="notes" placeholder="Contoh: pakaian warna putih dipisah"></textarea></div>
+          <div class="estimate"><span>Estimasi total</span><strong id="totalPrice">Rp 16.000</strong><span id="estimateText">Estimasi pengerjaan sekitar 2 hari.</span></div>
+          <button class="btn btn-primary" type="submit" style="width:100%">Buat contoh pesanan ↗</button>
+          <div class="result" id="orderResult" role="status" aria-live="polite"></div>
+          <div class="receipt-wrap" id="receiptWrap" aria-live="polite">
+            <div class="receipt" id="receipt">
+              <div class="receipt-head"><div class="receipt-logo">LAVÉRA</div><div class="receipt-sub">CARE IN EVERY THREAD</div><div class="receipt-title">STRUK PESANAN</div></div>
+              <div class="receipt-line"><span>No. Pesanan</span><strong id="receiptCode">—</strong></div>
+              <div class="receipt-line"><span>Tanggal</span><span id="receiptDate">—</span></div>
+              <div class="receipt-divider"></div>
+              <div class="receipt-line"><span>Nama</span><span id="receiptName">—</span></div>
+              <div class="receipt-line"><span>Kontak</span><span id="receiptContact">—</span></div>
+              <div class="receipt-line"><span>Layanan</span><span id="receiptService">—</span></div>
+              <div class="receipt-line"><span>Jumlah</span><span id="receiptQuantity">—</span></div>
+              <div class="receipt-line"><span>Catatan</span><span id="receiptNotes">—</span></div>
+              <div class="receipt-divider"></div>
+              <div class="receipt-line"><span>Harga satuan</span><span id="receiptUnitPrice">—</span></div>
+              <div class="receipt-line receipt-total"><span>TOTAL</span><span id="receiptTotal">—</span></div>
+              <div class="receipt-line"><span>Estimasi selesai</span><span id="receiptEta">—</span></div>
+              <div class="receipt-line"><span>Status</span><span id="receiptStatus">—</span></div>
+              <div class="receipt-foot">Terima kasih telah memilih LAVÉRA 💚<br><span>Struk demo — bukan bukti pembayaran</span></div>
+            </div>
+            <div class="receipt-actions"><button class="btn btn-light" type="button" id="printReceipt">Cetak / Simpan PDF</button><button class="btn btn-light" type="button" id="hideReceipt">Tutup struk</button></div>
+          </div>
+          <div class="notice">Demo GitHub Pages: pesanan hanya tersimpan di browser/perangkat ini. Ini belum mengirim pesanan ke laundry atau menyimpan data di server.</div>
+        </form>
+        <aside class="panel" id="lacak">
+          <h3>Lacak pesanan</h3><p class="small">Masukkan kode pesanan yang dibuat pada perangkat ini.</p>
+          <form id="trackForm"><div class="field"><label for="orderCode">Kode pesanan</label><div class="track-row"><input id="orderCode" required placeholder="Contoh: LAV-ABC123"><button class="btn btn-light" type="submit">Lacak</button></div></div></form>
+          <div id="trackResult"></div>
+          <hr style="border:0;border-top:1px solid var(--line);margin:24px 0">
+          <h3 style="font-size:1.25rem">Riwayat di perangkat ini</h3><div id="orderHistory"><p class="small">Belum ada pesanan tersimpan di browser ini.</p></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <section class="philosophy">
+    <div class="wrap"><div class="section-head"><div class="eyebrow" style="color:#b5d4b7">Our promise</div><h2>Merawat pakaian. Meringankan harimu.</h2><p>Hijau melambangkan kesegaran dan pertumbuhan, ivory memberi kesan bersih dan tenang, sementara hijau tua mewakili kepercayaan.</p></div>
+      <div class="values"><div class="value"><h3>01 — Jelas</h3><p>Informasi harga dan estimasi ditampilkan sebelum kamu membuat contoh pesanan.</p></div><div class="value"><h3>02 — Praktis</h3><p>Antarmuka sederhana yang nyaman digunakan di ponsel maupun komputer.</p></div><div class="value"><h3>03 — Penuh perhatian</h3><p>Setiap detail dirancang dengan semangat merawat pakaian secara lebih baik.</p></div></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-row"><div><div class="footer-brand">LAVÉRA</div><p>Care in every thread.</p></div><p>© <span id="year"></span> LAVÉRA. Dibuat dengan perhatian 💚</p></div></footer>
+<script>
+  const services = [
+    {id:"komplit",name:"Cuci Komplit (Cuci + Setrika)",price:8000,unit:"kg",days:2,description:"Cuci bersih, pelembut pakaian, dan setrika rapi.",icon:"🧺"},
+    {id:"kering",name:"Cuci Kering (Lipat)",price:5000,unit:"kg",days:1,description:"Pencucian dan pengeringan, siap disetrika sendiri.",icon:"☁️"},
+    {id:"setrika",name:"Setrika Saja",price:4000,unit:"kg",days:1,description:"Setrika rapi licin dengan pewangi pilihan.",icon:"♨️"},
+    {id:"express",name:"Express Service (Kilat 6 Jam)",price:15000,unit:"kg",days:1,description:"Layanan prioritas cepat selesai dalam 6 jam.",icon:"⚡"},
+    {id:"bedcover",name:"Bed Cover & Selimut",price:20000,unit:"pcs",days:2,description:"Pencucian higienis untuk item besar atau tebal.",icon:"🛏️"}
+  ];
+  const rupiah = n => "Rp " + Number(n).toLocaleString("id-ID");
+  const $ = id => document.getElementById(id);
+  const serviceCards = $("serviceCards"), serviceSelect = $("serviceSelect"), quantity = $("quantity");
+  function renderServices(){
+    serviceCards.innerHTML = services.map(s=>`<article class="service"><div class="service-top"><h3>${s.icon} ${s.name}</h3><span class="pill">~${s.days} hari</span></div><div class="price">${rupiah(s.price)}<span style="font: .82rem system-ui;color:#65756b"> / ${s.unit}</span></div><p>${s.description}</p><a class="btn btn-light" href="#pesan" data-service="${s.id}">Pilih layanan</a></article>`).join("");
+    serviceSelect.innerHTML = services.map(s=>`<option value="${s.id}">${s.name} — ${rupiah(s.price)}/${s.unit}</option>`).join("");
+    serviceCards.querySelectorAll("[data-service]").forEach(btn=>btn.addEventListener("click",()=>{serviceSelect.value=btn.dataset.service;updateEstimate();}));
+  }
+  function selectedService(){return services.find(s=>s.id===serviceSelect.value)||services[0]}
+  function updateEstimate(){
+    const s=selectedService(); $("quantityLabel").textContent=s.unit==="pcs"?"Jumlah (pcs)":"Berat (kg)";
+    quantity.step=s.unit==="pcs"?"1":"0.5"; if(s.unit==="pcs" && !Number.isInteger(Number(quantity.value))) quantity.value=Math.ceil(Number(quantity.value)||1);
+    const qty=Math.max(1,Number(quantity.value)||1); $("totalPrice").textContent=rupiah(qty*s.price);
+    $("estimateText").textContent=s.id==="express"?"Estimasi pengerjaan sekitar 6 jam.":`Estimasi pengerjaan sekitar ${s.days} hari.`;
+  }
+  function getOrders(){try{return JSON.parse(localStorage.getItem("lavera_demo_orders")||"[]")}catch(e){return []}}
+  function saveOrders(orders){try{localStorage.setItem("lavera_demo_orders",JSON.stringify(orders))}catch(e){}}
+  function safe(text){return String(text??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+  function renderHistory(){
+    const orders=getOrders();
+    if(!orders.length){$("orderHistory").innerHTML='<p class="small">Belum ada pesanan tersimpan di browser ini.</p>';return}
+    $("orderHistory").innerHTML=orders.slice().reverse().map(o=>`<div class="order-item"><strong>${safe(o.code)}</strong> <span class="status">${safe(o.status)}</span><div>${safe(o.serviceName)} · ${safe(o.quantity)} ${safe(o.unit)}</div><strong>${rupiah(o.total)}</strong><div class="small">${safe(o.date)}</div></div>`).join("");
+  }
+  $("orderForm").addEventListener("submit",e=>{
+    e.preventDefault(); const s=selectedService(), qty=Number(quantity.value);
+    if(!Number.isFinite(qty)||qty<1){return}
+    const code="LAV-"+Math.random().toString(36).slice(2,8).toUpperCase();
+    const order={code,name:$("customerName").value.trim(),contact:$("customerContact").value.trim(),serviceId:s.id,serviceName:s.name,quantity:qty,unit:s.unit,total:qty*s.price,notes:$("notes").value.trim(),status:"Contoh pesanan dibuat",date:new Date().toLocaleString("id-ID")};
+    const orders=getOrders();orders.push(order);saveOrders(orders);
+    $("orderResult").style.display="block";$("orderResult").innerHTML=`<strong>Contoh pesanan berhasil dibuat!</strong><br>Kode pesanan kamu: <code>${safe(code)}</code><br>Estimasi total: <strong>${rupiah(order.total)}</strong><br><span class="small">Simpan kode ini untuk mencoba fitur lacak pesanan.</span>`;
+    $("orderCode").value=code;renderHistory();$("trackResult").innerHTML=`<div class="result" style="display:block"><strong>${safe(order.code)}</strong><br>${safe(order.serviceName)} · ${safe(order.quantity)} ${safe(order.unit)}<br>Total: <strong>${rupiah(order.total)}</strong><br>Status: ${safe(order.status)}</div>`;
+  });
+  $("trackForm").addEventListener("submit",e=>{
+    e.preventDefault();const code=$("orderCode").value.trim().toUpperCase();const order=getOrders().find(o=>o.code.toUpperCase()===code);
+    $("trackResult").innerHTML=order?`<div class="result" style="display:block"><strong>${safe(order.code)}</strong><br>${safe(order.name)}<br>${safe(order.serviceName)} · ${safe(order.quantity)} ${safe(order.unit)}<br>Total: <strong>${rupiah(order.total)}</strong><br>Status: ${safe(order.status)}<br><span class="small">Dibuat: ${safe(order.date)}</span></div>`:'<div class="notice">Kode tidak ditemukan di browser ini. Pastikan kode benar dan gunakan perangkat/browser yang sama.</div>';
+  });
+  serviceSelect.addEventListener("change",updateEstimate);quantity.addEventListener("input",updateEstimate);
+  $("printReceipt").addEventListener("click",()=>window.print());
+  $("hideReceipt").addEventListener("click",()=>{$("receiptWrap").style.display="none"});
+  $("year").textContent=new Date().getFullYear();renderServices();updateEstimate();renderHistory();
+</script>
+</body>
+</html>
